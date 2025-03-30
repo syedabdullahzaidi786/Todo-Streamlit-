@@ -2,6 +2,10 @@
 
 A modern and user-friendly Todo application built with Streamlit that helps you manage your tasks efficiently.
 
+## Live Demo 🌐
+
+You can access the live application at: [https://saz-todos.streamlit.app/](https://saz-todos.streamlit.app/)
+
 ## Features ✨
 
 - Add new tasks with priority levels (Low, Medium, High)
