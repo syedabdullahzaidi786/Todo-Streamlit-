@@ -61,7 +61,7 @@ with st.form("add_todo"):
         }
         st.session_state.todos.append(todo_item)
         st.success("Task added successfully!")
-        st.experimental_rerun()
+        st.rerun()
 
 # Display todos
 st.subheader("Your Tasks")
@@ -80,7 +80,7 @@ else:
                 # Create a checkbox for completion status
                 if st.checkbox(f"{row['task']}", key=f"check_{index}", value=row['completed']):
                     st.session_state.todos[index]['completed'] = True
-                    st.experimental_rerun()
+                    st.rerun()
                 
                 # Show priority with color coding
                 priority_color = {
@@ -96,13 +96,13 @@ else:
                 # Edit button
                 if st.button("Edit", key=f"edit_{index}"):
                     st.session_state.editing_index = index
-                    st.experimental_rerun()
+                    st.rerun()
             
             with col3:
                 # Delete button
                 if st.button("Delete", key=f"delete_{index}"):
                     st.session_state.todos.pop(index)
-                    st.experimental_rerun()
+                    st.rerun()
             
             st.markdown("---")
 
@@ -121,11 +121,11 @@ if 'editing_index' in st.session_state:
             st.session_state.todos[index]['priority'] = edited_priority
             del st.session_state.editing_index
             st.success("Task updated successfully!")
-            st.experimental_rerun()
+            st.rerun()
         
         if st.form_submit_button("Cancel"):
             del st.session_state.editing_index
-            st.experimental_rerun()
+            st.rerun()
 
 # Statistics
 st.sidebar.subheader("Task Statistics")
